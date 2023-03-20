@@ -8,8 +8,7 @@ module.exports = {
         roboto: ['var(--font-roboto)']
       },
       colors: {
-        customBlack: '#1c1c1c',
-        customRed: '#d14d5b'
+        customBlack: '#1c1c1c'
       },
       fontSize: {
         '2.5xl': '1.625rem'

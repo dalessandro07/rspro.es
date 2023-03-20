@@ -1,13 +1,34 @@
 import Head from 'next/head'
+import Image from 'next/image'
+
+import RSProObjetivos from '@/components/index/RSProObjetivos'
+import RSProArticleLayout from '@/components/index/RSProArticleLayout'
+import RSProButton from '@/components/index/RSProButton'
+
+const rsproParagraphs = [
+  'Una forma de vida que une el interés de aprender y experimentar mediante la acción focalizada en la mejora de uno mismo en bien de los demás.',
+  'En esta página web podrá encontrar proyectos RSPro con los que motivarse para crecer con impacto positivo hacia nuestra sociedad.'
+]
+
+const rsproOptions = [
+  {
+    title: 'Explore proyectos RSPro',
+    description: 'Ideas con la experiencia de otras personas.',
+    image: '/images/explorar.jpg'
+  },
+  {
+    title: 'Plan RSPro',
+    description: '¿Necesita un plan?',
+    image: '/images/plan.jpg'
+  },
+  {
+    title: 'Inscriba su proyecto RSPro',
+    description: 'Comparta lo aprendido.',
+    image: '/images/inscripcion.jpg'
+  }
+]
 
 export default function Home() {
-  const bgImageStyle = {
-    backgroundImage: 'url(/images/banner.jpg)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat'
-  }
-
   return (
     <>
       <Head>
@@ -17,24 +38,56 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="flex flex-col items-center w-4/5 ml-auto">
-        <header style={bgImageStyle} className="flex justify-center items-end w-full h-3/5">
-          <div className="flex flex-col justify-center gap-3 items-center text-white pb-16">
-            <h1 className="font-semibold font-lato text-2xl">
-              Proyectos de Responsabilidad Social Profesional
-            </h1>
-
-            <span className="italic">
-              RSPro: Explore sus capacidades más allá de lo profesional
-            </span>
-          </div>
-        </header>
-
-        <article className="px-16 py-8">
-          <h2 className="text-2xl text-customRed font-semibold">
+      <section className="flex flex-col gap-4 items-center">
+        <RSProArticleLayout>
+          <h2 className="text-2xl text-red-600 font-semibold">
             RSPro: Experimentar con responsabilidad
           </h2>
-        </article>
+
+          <>
+            {rsproParagraphs.map((paragraph, index) => (
+              <p key={index} className="italic text-center">
+                {paragraph}
+              </p>
+            ))}
+          </>
+        </RSProArticleLayout>
+
+        <RSProButton>Proyectos RSPro</RSProButton>
+
+        <RSProArticleLayout bordered>
+          <h2 className="text-blue-600 text-4xl font-bold font-lato">
+            RSPro = Responsabilidad Social Profesional
+          </h2>
+          <button className="border-b border-blue-600 text-blue-600 hover:text-blue-900 hover:border-blue-900 transition-all duration-200">
+            Más información
+          </button>
+        </RSProArticleLayout>
+
+        <RSProArticleLayout bordered>
+          <RSProObjetivos />
+        </RSProArticleLayout>
+
+        <RSProArticleLayout bordered>
+          <article className="flex justify-between gap-8 w-full">
+            {rsproOptions.map((option, index) => (
+              <section className="flex flex-col gap-5 items-center" key={index}>
+                <Image src={option.image} alt={option.title} width={320} height={320} />
+                <h3 className="text-2xl text-center font-semibold text-red-600">{option.title}</h3>
+                <p className="text-center">{option.description}</p>
+              </section>
+            ))}
+          </article>
+        </RSProArticleLayout>
+
+        <RSProButton>Proyectos RSPro</RSProButton>
+
+        <RSProArticleLayout>
+          <h2 className="text-2xl text-red-600 font-semibold">¿Alguna pregunta o propuesta?</h2>
+
+          <p className="italic text-center">Envíenos un mensaje</p>
+        </RSProArticleLayout>
+        <RSProButton>Contacto</RSProButton>
       </section>
     </>
   )

@@ -9,7 +9,7 @@ export default function Aside() {
           <Image src="/images/logo.jpg" width={31} height={31} alt="Logo de RSPro" />
         </div>
 
-        <h2 className="font-semibold text-2.5xl px-2 pb-3">RSPro.es</h2>
+        <h2 className="text-2.5xl px-2 pb-3">RSPro.es</h2>
 
         <Navigation />
       </div>
