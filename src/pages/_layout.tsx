@@ -1,6 +1,6 @@
 import { Lato, Roboto } from 'next/font/google'
 import Aside from '@/components/Aside'
-import RSProPagesLayout from '@/components/RSProPagesLayout'
+import RSProPagesLayout from '@/components/layout/RSProPagesLayout'
 
 const lato = Lato({
   variable: '--font-lato',

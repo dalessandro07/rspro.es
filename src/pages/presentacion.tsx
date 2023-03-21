@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import RSProPresentationSection from '@/components/presentation/RSProPresentationSection'
-import RSProButton from '@/components/index/RSProButton'
+import RSProButton from '@/components/buttons/RSProButton'
+import RSProTitle from '@/components/text/RSProTitle'
 
 const paragraphs1 = [
   'RSPro es la forma de referirse a una filosofía basada en la Responsabilidad Social Profesional.',
@@ -39,7 +40,7 @@ export default function Presentacion() {
       </Head>
 
       <section className="flex py-10 flex-col items-center gap-16">
-        <h1 className="text-center text-red-600 text-2xl font-bold font-lato">Presentación</h1>
+        <RSProTitle>Presentación</RSProTitle>
 
         <article className="flex flex-col gap-16 w-1/2 mx-auto px-10">
           <RSProPresentationSection paragraphs={paragraphs1}>

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import RSProArticleLayout from '@/components/index/RSProArticleLayout'
+import RSProArticleLayout from '@/components/layout/RSProArticleLayout'
 import Image from 'next/image'
 
 const projects = [
